@@ -1,4 +1,11 @@
 export const siteContent = {
+    nav: [
+    { label: 'Home', href: '/' },
+    { label: 'About', href: '/about' },
+    { label: 'Journal', href: '/journal' },
+    { label: 'Projects', href: '/projects' },
+    { label: 'Contact', href: '/contact' },
+  ],
   signal: 'Studying how fiber becomes structure, shape, and something wearable.',
   projects: [
     {

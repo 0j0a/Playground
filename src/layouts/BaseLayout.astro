@@ -1,5 +1,6 @@
 ---
 import '../../../styles.css';
+import { siteContent } from '../data/site';
 
 interface Props {
   title: string;
@@ -31,13 +32,18 @@ const {
       <div class="header-title mono">TEXTILE PROCESS JOURNAL / 2026</div>
       <div class="header-status mono">SYSTEM ONLINE</div>
     </header>
-    {currentPage !== 'home' && <nav class="page-nav" aria-label="Main navigation">
-      <a href="/" aria-current={currentPage === 'home' ? 'page' : undefined}>Home</a>
-      <a href="/about" aria-current={currentPage === 'about' ? 'page' : undefined}>About</a>
-      <a href="/journal" aria-current={currentPage === 'journal' ? 'page' : undefined}>Journal</a>
-      <a href="/projects" aria-current={currentPage === 'projects' ? 'page' : undefined}>Projects</a>
-      <a href="/contact" aria-current={currentPage === 'contact' ? 'page' : undefined}>Contact</a>
-    </nav>}
+   {currentPage !== 'home' && (
+  <nav class="page-nav" aria-label="Main navigation">
+    {siteContent.nav.map((item) => {
+      const isCurrent = item.href === '/' ? currentPage === 'home' : item.href === `/${currentPage}`;
+      return (
+        <a href={item.href} aria-current={isCurrent ? 'page' : undefined}>
+          {item.label}
+        </a>
+      );
+    })}
+  </nav>
+)}
     <main>
       <slot />
     </main>

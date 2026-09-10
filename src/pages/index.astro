@@ -16,10 +16,20 @@ import { siteContent } from '../data/site';
       </div>
       <p class="hero-kicker mono"><span class="status-dot"></span> Process journal in progress</p>
     </div>
-    <nav class="hero-nav-panel" aria-label="Main navigation">
-      <p class="hero-index mono">NAVIGATION</p>
-      <div class="hero-nav-grid"><a href="/" aria-current="page">Home</a><a href="/about">About</a><a href="/journal">Journal</a><a href="/projects">Projects</a><a href="/contact">Contact</a><a href="#work">View work</a></div>
-    </nav>
+    
+    
+<nav class="hero-nav-panel" aria-label="Main navigation">
+  <p class="hero-index mono">NAVIGATION</p>
+  <div class="hero-nav-grid">
+    {siteContent.nav.map((item) => (
+      <a href={item.href} aria-current={item.href === '/' ? 'page' : undefined}>
+        {item.label}
+      </a>
+    ))}
+    <a href="#work">View work</a>
+  </div>
+</nav>
+
   </section>
 
   <section class="signal-band" aria-label="Current focus"><div class="signal-label mono">Current signal</div><p>{siteContent.signal}</p><div class="signal-mark mono">04 / 04</div></section>
