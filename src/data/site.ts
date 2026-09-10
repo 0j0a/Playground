@@ -1,5 +1,56 @@
-export const siteContent = {
-    nav: [
+export interface NavItem {
+  label: string;
+  href: string;
+}
+
+export interface Project {
+  number: string;
+  type: string;
+  title: string;
+  description: string;
+  year: string;
+  link: string;
+}
+
+export interface Article {
+  date: string;
+  readTime: string;
+  slug: string;
+  category: string;
+  title: string;
+  excerpt: string;
+  body: string[];
+}
+
+export interface LearningItem {
+  title: string;
+  description: string;
+}
+
+export interface SiteContent {
+  nav: NavItem[];
+  signal: string;
+  hero: {
+    eyebrow: string;
+    intro: string;
+  };
+  about: {
+    bio: string;
+    learningIntro: string;
+    journalNote: string;
+    learningItems: LearningItem[];
+  };
+  contact: {
+    email: string;
+    instagramHandle: string;
+    instagramUrl: string;
+  };
+  projects: Project[];
+  articles: Article[];
+}
+
+export const siteContent: SiteContent = {
+  nav: [
     { label: 'Home', href: '/' },
     { label: 'About', href: '/about' },
     { label: 'Journal', href: '/journal' },
@@ -7,6 +58,37 @@ export const siteContent = {
     { label: 'Contact', href: '/contact' },
   ],
   signal: 'Studying how fiber becomes structure, shape, and something wearable.',
+  hero: {
+    eyebrow: 'Fashion / textile / 2026',
+    intro:
+      'I’m Joa, a Fashion and Textile Technologies student drawn to fiber art, pattern making, and clothing construction.',
+  },
+  about: {
+    bio: 'I’m a Fashion and Textile Technologies student with a part-time job in marketing and sales at an HR company. Outside work and study, I keep coming back to fiber, shape, and the quiet problem-solving of making clothes.',
+    learningIntro:
+      'My interests sit between soft sculpture and wearable form: fiber art, pattern making, clothing construction, and the small decisions that make a material behave differently.',
+    journalNote:
+      'This website is a record of samples, adjustments, unfinished thoughts, and the final pieces that grow from them.',
+    learningItems: [
+      {
+        title: 'Fiber art',
+        description: 'Exploring texture, surface, tension, and the ways loose materials can become structure.',
+      },
+      {
+        title: 'Pattern making',
+        description: 'Learning to translate an idea into lines, measurements, balance, and a shape that can move.',
+      },
+      {
+        title: 'Clothing construction',
+        description: 'Building patience and precision through seams, fittings, finishing, and wearing the result.',
+      },
+    ],
+  },
+  contact: {
+    email: 'hello@example.com',
+    instagramHandle: '@joa.visscher',
+    instagramUrl: 'https://instagram.com',
+  },
   projects: [
     {
       number: '01',
@@ -74,4 +156,4 @@ export const siteContent = {
       ],
     },
   ],
-} as const;
+};

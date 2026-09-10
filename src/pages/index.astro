@@ -6,9 +6,9 @@ import { siteContent } from '../data/site';
 <BaseLayout title="Joa Visscher | Process journal" currentPage="home">
   <section class="hero section-grid">
     <div class="hero-column hero-column-main">
-      <p class="eyebrow">Fashion / textile / 2026</p>
+      <p class="eyebrow">{siteContent.hero.eyebrow}</p>
       <h1>Making by hand.<br /><em>Learning by doing.</em></h1>
-      <p class="hero-intro">I’m Joa, a Fashion and Textile Technologies student drawn to fiber art, pattern making, and clothing construction.</p>
+      <p class="hero-intro">{siteContent.hero.intro}</p>
       <div class="hero-wide-meta">
         <div><p class="hero-index mono">01 / PROFILE</p><p class="hero-column-text">A process journal for samples, experiments, construction problems, and finished pieces.</p></div>
         <div><p class="hero-index mono">02 / CURRENT FOCUS</p><p class="hero-column-text">{siteContent.signal}</p></div>
@@ -16,8 +16,8 @@ import { siteContent } from '../data/site';
       </div>
       <p class="hero-kicker mono"><span class="status-dot"></span> Process journal in progress</p>
     </div>
-    
-    
+
+
 <nav class="hero-nav-panel" aria-label="Main navigation">
   <p class="hero-index mono">NAVIGATION</p>
   <div class="hero-nav-grid">
@@ -41,9 +41,9 @@ import { siteContent } from '../data/site';
 
   <section class="notes-section section-grid" id="notes">
     <div class="section-heading"><p class="eyebrow">02 / journal updates</p><h2>Small steps,<br /><em>kept visible.</em></h2></div>
-    <div class="notes-content"><div class="notes-intro"><p>Making is easier to understand when the middle is not hidden. These are short updates from the workbench: what I tested, what changed, and what I want to try next.</p><a class="text-link" href="mailto:hello@example.com?subject=Join the notes">Join the occasional note <span aria-hidden="true">↗</span></a></div><div class="article-list">{siteContent.articles.map((article) => <article class="article-row"><div class="article-meta mono"><span>{article.date}</span><span>{article.readTime}</span></div><div><h3>{article.title}</h3><p>{article.excerpt}</p></div><span class="article-arrow" aria-hidden="true">↗</span></article>)}</div></div>
+    <div class="notes-content"><div class="notes-intro"><p>Making is easier to understand when the middle is not hidden. These are short updates from the workbench: what I tested, what changed, and what I want to try next.</p><a class="text-link" href={`mailto:${siteContent.contact.email}?subject=Join the notes`}>Join the occasional note <span aria-hidden="true">↗</span></a></div><div class="article-list">{siteContent.articles.map((article) => <article class="article-row"><div class="article-meta mono"><span>{article.date}</span><span>{article.readTime}</span></div><div><h3>{article.title}</h3><p>{article.excerpt}</p></div><span class="article-arrow" aria-hidden="true">↗</span></article>)}</div></div>
   </section>
 
-  <section class="contact-section section-grid" id="contact"><p class="eyebrow">03 / open loop</p><div class="contact-copy"><h2>Want to see<br /><em>what comes next?</em></h2><a class="contact-link" href="mailto:hello@example.com">hello@example.com <span aria-hidden="true">↗</span></a></div><p class="contact-note">For conversations about textiles, making, styling, or a project in progress.</p>
+  <section class="contact-section section-grid" id="contact"><p class="eyebrow">03 / open loop</p><div class="contact-copy"><h2>Want to see<br /><em>what comes next?</em></h2><a class="contact-link" href={`mailto:${siteContent.contact.email}`}>{siteContent.contact.email} <span aria-hidden="true">↗</span></a></div><p class="contact-note">For conversations about textiles, making, styling, or a project in progress.</p>
   </section>
 </BaseLayout>
