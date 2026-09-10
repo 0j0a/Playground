@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { siteContent } from '../../data/site';
+
+export function getStaticPaths() {
+  return siteContent.articles.map((article) => ({
+    params: { slug: article.slug },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+---
+
+<BaseLayout title={`${article.title} | Joa Visscher`} description={article.excerpt} currentPage="journal">
+  <main class="retro-page-main"><div class="retro-page-intro blog-post-intro"><p class="eyebrow">{article.date} / {article.category} / {article.readTime}</p><h1>{article.title}</h1><p>{article.excerpt}</p><a class="retro-back-link" href="/journal">← Back to journal</a></div><div class="blog-post-layout"><div><p class="eyebrow">Process note</p></div><div class="blog-post-copy">{article.body.map((paragraph) => <p>{paragraph}</p>)}</div></div></main>
+</BaseLayout>

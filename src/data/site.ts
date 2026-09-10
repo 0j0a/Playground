@@ -1,0 +1,70 @@
+export const siteContent = {
+  signal: 'Studying how fiber becomes structure, shape, and something wearable.',
+  projects: [
+    {
+      number: '01',
+      type: 'Fiber study',
+      title: 'Surface / tension',
+      description: 'Testing texture, layering, and structure through small fiber art samples.',
+      year: 'In progress',
+      link: '/projects',
+    },
+    {
+      number: '02',
+      type: 'Pattern study',
+      title: 'A shape that moves',
+      description: 'Working from measurements and paper experiments toward a wearable pattern.',
+      year: '2026',
+      link: '/projects',
+    },
+    {
+      number: '03',
+      type: 'Construction',
+      title: 'First finished piece',
+      description: 'Documenting the fittings, changes, seams, and final details of a constructed garment.',
+      year: 'Exploring',
+      link: '/contact',
+    },
+  ],
+  articles: [
+    {
+      date: '09.09.26',
+      readTime: '4 min read',
+      slug: 'what-the-first-sample-taught-me',
+      category: 'Material study',
+      title: 'What the first sample taught me',
+      excerpt: 'A material test does not need to be beautiful to be useful. It needs to show you what to try next.',
+      body: [
+        'The first sample is rarely the finished idea. It is a question made visible: what happens when this fiber is pulled, folded, layered, or left alone?',
+        'I am learning to keep the samples that look unsuccessful. A loose edge or unexpected shape often tells me more than a perfect test because it points directly to the next decision.',
+        'For this study, I changed the tension and repeated the same small section three times. The differences were subtle, but they gave me a clearer direction for the larger piece.',
+      ],
+    },
+    {
+      date: '02.09.26',
+      readTime: '6 min read',
+      slug: 'the-pattern-is-not-the-garment',
+      category: 'Pattern making',
+      title: 'The pattern is not the garment',
+      excerpt: 'Notes from moving between flat paper, a three-dimensional body, and the adjustments in between.',
+      body: [
+        'A pattern can look correct on paper and still behave unexpectedly when it becomes three-dimensional. The distance between those two states is where much of the learning happens.',
+        'I am paying more attention to where the material wants to move. A straight line on paper can become a fold, a pull, or a completely different line once it meets the body.',
+        'The next version will keep the general shape but change the balance. I am recording each adjustment so the finished garment still carries the evidence of the process.',
+      ],
+    },
+    {
+      date: '24.08.26',
+      readTime: '3 min read',
+      slug: 'keeping-the-messy-middle',
+      category: 'Process note',
+      title: 'Keeping the messy middle',
+      excerpt: 'Why progress photos and unfinished samples belong beside the final piece.',
+      body: [
+        'The final piece is only one moment in the life of a project. It does not show the rejected shapes, uneven samples, or small discoveries that made it possible.',
+        'I want this journal to keep those middle stages visible. Not as a performance of perfection, but as a practical record I can return to when I begin something new.',
+        'Progress is easier to understand when it has somewhere to go. This archive is that place.',
+      ],
+    },
+  ],
+} as const;

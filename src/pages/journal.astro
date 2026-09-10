@@ -1,0 +1,8 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteContent } from '../data/site';
+---
+
+<BaseLayout title="Journal | Joa Visscher" currentPage="journal">
+  <main class="retro-page-main"><div class="retro-page-intro"><p class="eyebrow">02 / journal repository</p><h1>Notes from<br /><em>the workbench.</em></h1><p>A growing archive of material tests, pattern experiments, construction problems, and the pieces that come out the other side.</p></div><div class="journal-grid"><div class="journal-feature"><figure class="image-terminal"><div class="image-label mono">ARCHIVE / MATERIAL STUDIES</div><img src="https://images.unsplash.com/photo-1528459105426-b9548367069b?auto=format&fit=crop&w=1200&q=80" alt="Close-up of colorful textile fibers" /><figcaption class="mono">Repository online / updates in progress</figcaption></figure></div><div class="retro-copy"><p class="eyebrow">All journal entries</p><div class="blog-repository">{siteContent.articles.map((article, index) => <a class="blog-entry" href={`/journal/${article.slug}`}><span class="blog-entry-number mono">{String(index + 1).padStart(2, '0')}</span><span><span class="blog-entry-meta mono">{article.date} / {article.category} / {article.readTime}</span><strong>{article.title}</strong><small>{article.excerpt}</small></span><span class="blog-entry-arrow">↗</span></a>)}</div></div></div></main>
+</BaseLayout>
